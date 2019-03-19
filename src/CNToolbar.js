@@ -261,6 +261,7 @@ class CNToolbar extends Component {
 
     render() {
         const { selectedStyles, selectedTag,
+            containerStyle = {},
             bold, italic, underline, lineThrough,
             title, heading, ul, ol, body,
             image, foreColor, highlight
@@ -277,7 +278,7 @@ class CNToolbar extends Component {
         let selectedBgColor = this.props.selectedBackgroundColor ? this.props.selectedBackgroundColor : defaultSelectedBgColor;
 
         return (
-            <View style={styles.toolbarContainer}>
+            <View style={[styles.toolbarContainer, containerStyle]}>
                 {styleButtons === false ? this.renderStyleButtons(size, color, bgColor, selectedColor, selectedBgColor) : null}
                 {(styleButtons === false && tagButtons === false) ? <View style={styles.separator}></View> : null}
                 {tagButtons === false ? this.renderTagButtons(size, color, bgColor, selectedColor, selectedBgColor) : null}
