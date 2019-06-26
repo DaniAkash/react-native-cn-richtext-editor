@@ -27,7 +27,7 @@ class CNStyledText extends Component {
 
     render() {
         return (
-            <Text style={this.props.style}
+            <Text style={[{fontSize: 15, fontFamily:"SourceSansPro-Regular"},this.props.style]}
             >
             {this.props.text}
         </Text>
