@@ -1,21 +1,22 @@
 {
   "name": "react-native-cn-richtext-editor",
-  "version": "1.0.31",
+  "version": "1.0.38",
   "description": "RichText Editor for React-Native",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src"
   },
   "dependencies": {
     "immutability-helper": "^2.8.1",
     "lodash": "^4.17.11",
     "shortid": "^2.2.14",
-    "xmldoc": "^1.1.2",
+    "xmldom": "^0.1.27",
     "diff-match-patch": "^1.0.4"
   },
   "peerDependencies": {
-    "react": "16.6.1",
-    "react-native": "0.57.5"
+    "react": "^16.6.1",
+    "react-native": "^0.57.5"
   },
   "keywords": [
     "react",
@@ -32,9 +33,20 @@
     "Narbe HS <imnapo@gmail.com> (http://learncode.net)"
   ],
   "author": "Narbe HS <imnapo@gmail.com> (http://learncode.net)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/imnapo/react-native-cn-richtext-editor/issues"
   },
-  "homepage": "https://github.com/imnapo/react-native-cn-richtext-editor#readme"
+  "homepage": "https://github.com/imnapo/react-native-cn-richtext-editor#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
 }

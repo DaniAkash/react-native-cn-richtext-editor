@@ -21,7 +21,7 @@ yarn add react-native-cn-richtext-editor
 
 Here is a simple overview of our components usage.
 
-```
+``` jsx
 import React, { Component } from 'react';
 import { View, StyleSheet, Keyboard
 , TouchableWithoutFeedback, Text
@@ -167,19 +167,39 @@ Actually we did not implement 'Toolbar buttons and menus' and 'Image Uploading P
 To see an example of how to implement more advanced feature of this editor please check this [Link](https://github.com/imnapo/react-native-cn-richtext-editor/blob/master/expo-demo/App.js).
 
 Also be noticed that this example is writen with expo and required 'react-native-popup-menu' package.
-## Props
+
+## API
 
 ### CNRichTextEditor
+
+#### Props
 
 | Name | Description | Required |
 | ------ | ----------- | ---- |
 | onSelectedTagChanged   | this event triggers when selected tag of editor is changed. | No |
 | onSelectedStyleChanged | this event triggers when selected style of editor is changed. | No |
 | onValueChanged | this event triggers when value of editor is changed. | No |
+| onRemoveImage | this event triggers when an image is removed. Callback param in the form `{ url, id }`. | No |
 | value    | an array object which keeps value of the editor | Yes |
 | styleList  | an object consist of styles name and values (use getDefaultStyles function) | Yes |
+| ImageComponent | a React component (class or functional) which will be used to render images. Will be passed `style` and `source` props. | No |
+| style | Styles applied to the outermost component. | No |
+| contentContainerStyle | Styles applied to the scrollview content. | No |
+| onFocus    | Callback that is called when one of text inputs are focused. | No |
+| onBlur    | Callback that is called when one of text inputs are blurred. | No |
+| placeholder    | The string that will be rendered before text input has been entered. | No |
+
+#### Instance methods
+
+| Name | Params | Description |
+| ------ | ---- | ----------- |
+| applyToolbar | `toolType` | Apply the given transformation to selected text. |
+| insertImage | `uri, id?, height?, width?` | Insert the provided image where cursor is positionned. |
+| focus |  | Focus to the last `TextInput` |
 
 ### CNToolbar
+
+#### Props
 
 | Name | Required | Description |
 | ------ | ------ | ----------- |
@@ -198,9 +218,25 @@ Also be noticed that this example is writen with expo and required 'react-native
 | image  | No  | a component which renders as image button |
 | highlight  | No  | a component which renders as highlight button |
 | foreColor  | No  | a component which renders as foreColor button |
+| style | No | style applied to container |
+| color | No | default color passed to icon |
+| backgroundColor | No | default background color passed to icon |
+| selectedColor | No | color applied when icon is selected |
+| selectedBackgroundColor | No | background color applied when icon is selected |
+| iconContainerStyle | No | a style prop assigned to icon container |
 
+### CNRichTextView
+
+#### Props
+
+| Name | Required | Description |
+| ------ | ------ | ----------- |
+| text   | Yes | html string (created by convertToHtmlString function |
+| style | No | style applied to container (req. {flex:1}) |
+| styleList  |  No | an object consist of styles name and values (use getDefaultStyles function) |
 
 ### Functions
+
 | Name | Param | Returns | Description |
 | ------ | ------ | ------ |----------- |
 | getInitialObject | - | javascript object  | create a initial value for the editor. |
@@ -209,6 +245,7 @@ Also be noticed that this example is writen with expo and required 'react-native
 | getDefaultStyles | - | javascript object  | creates required styles for the editor. |
 
 ## Expo Demo App
+
 Checkout the
 [expo-demo App](https://expo.io/@imnapo/expo-demo)
 on Expo which uses react-native-cn-richtext-editor components.
@@ -217,5 +254,5 @@ If you are looking to test and run expo-demo App locally, click
 view the implementation & run it locally.
 
 ## License
-ISC
 
+[MIT](https://github.com/imnapo/react-native-cn-richtext-editor/blob/master/LICENSE)

@@ -26,8 +26,7 @@ class App extends Component {
  
     constructor(props) {
         super(props);
-        
-
+                 
         this.state = {
             selectedTag : 'body',
             selectedColor : 'default',
@@ -35,10 +34,8 @@ class App extends Component {
             colors : ['red', 'green', 'blue'],
             highlights:['yellow_hl','pink_hl', 'orange_hl', 'green_hl','purple_hl','blue_hl'],
             selectedStyles : [],
-            value: [getInitialObject]
+            value: [getInitialObject()]
         };
-
-        this.state.value = [getInitialObject()];
 
         this.editor = null;
 
@@ -157,6 +154,12 @@ class App extends Component {
         this.setState({
             selectedHighlight: value
         });
+    }
+
+    onRemoveImage = ({url, id}) => {        
+        // do what you have to do after removing an image
+        console.log(`image removed (url : ${url})`);
+        
     }
 
     renderImageSelector() {
@@ -293,18 +296,14 @@ class App extends Component {
     }
 
     render() {
+        let customStyles = {...defaultStyles, body: {fontSize: 12}, heading : {fontSize: 16}, title : {fontSize: 20}};
+        
         return (
             <KeyboardAvoidingView 
             behavior="padding" 
             enabled
             keyboardVerticalOffset={IS_IOS ? 0 : 0}
-            style={{
-                flex: 1,
-                paddingTop: 20,
-                backgroundColor:'#eee',
-                flexDirection: 'column', 
-                justifyContent: 'flex-end', 
-            }}
+            style={styles.root}
             >
             <MenuProvider style={{flex: 1}}>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss} >             
@@ -314,18 +313,16 @@ class App extends Component {
                             onSelectedTagChanged={this.onSelectedTagChanged}
                             onSelectedStyleChanged={this.onSelectedStyleChanged}
                             value={this.state.value}
-                            style={{ backgroundColor : '#fff'}}
-                            styleList={defaultStyles}
-                            //foreColor=''
+                            style={styles.editor}
+                            styleList={customStyles}
+                            foreColor='dimgray' // optional (will override default fore-color)
                             onValueChanged={this.onValueChanged}
-                            //onRemoveImage={this.onRemoveImage}
+                            onRemoveImage={this.onRemoveImage}
                         />                        
                     </View>
                 </TouchableWithoutFeedback>
 
-                <View style={{
-                    minHeight: 35
-                }}>
+                <View style={styles.toolbarContainer}>
 
                     <CNToolbar
                         size={28}
@@ -343,7 +340,12 @@ class App extends Component {
                         highlight={this.renderHighlight()}
                         selectedTag={this.state.selectedTag}
                         selectedStyles={this.state.selectedStyles}
-                        onStyleKeyPress={this.onStyleKeyPress} />
+                        onStyleKeyPress={this.onStyleKeyPress} 
+                        backgroundColor="aliceblue" // optional (will override default backgroundColor)
+                        color="gray" // optional (will override default color)
+                        selectedColor='white' // optional (will override default selectedColor)
+                        selectedBackgroundColor='deepskyblue' // optional (will override default selectedBackgroundColor)
+                        /> 
                 </View>
             </MenuProvider>
         </KeyboardAvoidingView>
@@ -353,6 +355,13 @@ class App extends Component {
 }
 
 var styles = StyleSheet.create({
+    root: {
+        flex: 1,
+        paddingTop: 20,
+        backgroundColor:'#eee',
+        flexDirection: 'column', 
+        justifyContent: 'flex-end', 
+    },
     main: {
         flex: 1,
         marginTop: 10,
@@ -360,6 +369,12 @@ var styles = StyleSheet.create({
         paddingRight: 30,
         paddingBottom: 1,
         alignItems: 'stretch',
+    },
+    editor: { 
+        backgroundColor : '#fff'
+    },
+    toolbarContainer: {
+        minHeight: 35
     },
     menuOptionText: {
         textAlign: 'center',
