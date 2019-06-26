@@ -410,7 +410,7 @@ export function convertToHtmlString(contents, styleList = null) {
               len: 0, 
               stype: [], 
               styleList: [{
-                  fontSize: 20,
+                "fontFamily":"SourceSansPro-Regular","fontSize":15,
               }],
               tag:'body', 
               NewLine: true
