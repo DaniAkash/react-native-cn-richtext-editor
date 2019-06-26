@@ -1514,7 +1514,8 @@ class CNTextInput extends Component {
             multiline={true}         
             style={[style ? style : {}, {     
                 color:color,
-                fontSize: 20,
+                fontSize: 15,
+                fontFamily:"SourceSansPro-Regular",
                 paddingTop: 5,
                 paddingBottom: 5,
                 paddingLeft: 2,
