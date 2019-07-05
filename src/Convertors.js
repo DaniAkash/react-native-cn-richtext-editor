@@ -386,7 +386,6 @@ export function getInitialObject() {
       styleList: [{
         "fontFamily": "SourceSansPro-Regular",
         "fontSize": 15,
-        "lineHeight": 26,
         "color": "rgba(44, 47, 66, 1)"
       }],
       tag: 'body',
@@ -425,7 +424,6 @@ const defaultStyles = StyleSheet.create(
       "fontWeight": "bold",
       "fontFamily": "SourceSansPro-SemiBold",
       "fontSize": 18,
-      "lineHeight": 28,
       "color": "rgba(44, 47, 66, 1)"
     },
     "italic": {
@@ -435,44 +433,37 @@ const defaultStyles = StyleSheet.create(
       "textDecorationLine": "underline",
       "fontFamily": "SourceSansPro-Regular",
       "fontSize": 15,
-      "lineHeight": 26,
       "color": "rgba(44, 47, 66, 1)"
     },
     "lineThrough": {
       "textDecorationLine": "line-through",
       "fontFamily": "SourceSansPro-Regular",
       "fontSize": 15,
-      "lineHeight": 26,
       "color": "rgba(44, 47, 66, 1)"
     },
     "heading": {
       "fontFamily": "SourceSansPro-SemiBold",
       "fontSize": 24,
-      "lineHeight": 28,
       "color": "rgba(44, 47, 66, 1)"
     },
     "body": {
       "fontFamily": "SourceSansPro-Regular",
       "fontSize": 15,
-      "lineHeight": 26,
       "color": "rgba(44, 47, 66, 1)"
     },
     "title": {
       "fontFamily": "SourceSansPro-SemiBold",
       "fontSize": 24,
-      "lineHeight": 28,
       "color": "rgba(44, 47, 66, 1)"
     },
     "ul": {
       "fontFamily": "SourceSansPro-Regular",
       "fontSize": 15,
-      "lineHeight": 26,
       "color": "rgba(44, 47, 66, 1)"
     },
     "ol": {
       "fontFamily": "SourceSansPro-Regular",
       "fontSize": 15,
-      "lineHeight": 26,
       "color": "rgba(44, 47, 66, 1)"
     },
     "red": {
