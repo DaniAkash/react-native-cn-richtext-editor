@@ -384,7 +384,10 @@ export function getInitialObject() {
       len: 0,
       stype: [],
       styleList: [{
-        fontSize: 20,
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 15,
+        "lineHeight": 26,
+        "color": "rgba(44, 47, 66, 1)"
       }],
       tag: 'body',
       NewLine: true,
@@ -418,58 +421,89 @@ export function getDefaultStyles() {
 
 const defaultStyles = StyleSheet.create(
   {
-    bold: {
-      fontWeight: 'bold',
+    "bold": {
+      "fontWeight": "bold",
+      "fontFamily": "SourceSansPro-SemiBold",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    italic: {
-      fontStyle: 'italic',
+    "italic": {
+      "fontStyle": "italic"
     },
-    underline: { textDecorationLine: 'underline' },
-    lineThrough: { textDecorationLine: 'line-through' },
-    heading: {
-      fontSize: 25,
+    "underline": {
+      "textDecorationLine": "underline",
+      "fontFamily": "SourceSansPro-Regular",
+      "fontSize": 15,
+      "lineHeight": 26,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    body: {
-      fontSize: 20,
+    "lineThrough": {
+      "textDecorationLine": "line-through",
+      "fontFamily": "SourceSansPro-Regular",
+      "fontSize": 15,
+      "lineHeight": 26,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    title: {
-      fontSize: 30,
+    "heading": {
+      "fontFamily": "SourceSansPro-SemiBold",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    ul: {
-      fontSize: 20,
+    "body": {
+      "fontFamily": "SourceSansPro-Regular",
+      "fontSize": 15,
+      "lineHeight": 26,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    ol: {
-      fontSize: 20,
+    "title": {
+      "fontFamily": "SourceSansPro-SemiBold",
+      "fontSize": 24,
+      "lineHeight": 28,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    red: {
-      color: '#d23431',
+    "ul": {
+      "fontFamily": "SourceSansPro-Regular",
+      "fontSize": 15,
+      "lineHeight": 26,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    green: {
-      color: '#4a924d',
+    "ol": {
+      "fontFamily": "SourceSansPro-Regular",
+      "fontSize": 15,
+      "lineHeight": 26,
+      "color": "rgba(44, 47, 66, 1)"
     },
-    blue: {
-      color: '#0560ab',
+    "red": {
+      "color": "#d23431"
     },
-    black: {
-      color: '#33363d',
+    "green": {
+      "color": "#4a924d"
     },
-    blue_hl: {
-      backgroundColor: '#34f3f4',
+    "blue": {
+      "color": "#0560ab"
     },
-    green_hl: {
-      backgroundColor: '#2df149',
+    "black": {
+      "color": "#33363d"
     },
-    pink_hl: {
-      backgroundColor: '#f53ba7',
+    "blue_hl": {
+      "backgroundColor": "#34f3f4"
     },
-    yellow_hl: {
-      backgroundColor: '#f6e408',
+    "green_hl": {
+      "backgroundColor": "#2df149"
     },
-    orange_hl: {
-      backgroundColor: '#f07725',
+    "pink_hl": {
+      "backgroundColor": "#f53ba7"
     },
-    purple_hl: {
-      backgroundColor: '#c925f2',
+    "yellow_hl": {
+      "backgroundColor": "#f6e408"
     },
-  },
+    "orange_hl": {
+      "backgroundColor": "#f07725"
+    },
+    "purple_hl": {
+      "backgroundColor": "#c925f2"
+    }
+  }
 );
